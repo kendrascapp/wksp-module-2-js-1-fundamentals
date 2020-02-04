@@ -27,7 +27,7 @@ JavaScript executes a program from top to bottom in order.
  
 ```js
 if (condition) {
-    // do something
+    // if the condition is true the action will occur 
 }
 ```
 
@@ -60,12 +60,23 @@ Turn the following sentences into valid JavaScript `if` statements. _Use console
 ```js
 // 1. If it rains, I stay home.
 let currentWeather = 'rainy';
-
+if (currentWeather === 'rainy') {
+    console.log('I stay home');
+}
 // 2. If I am hungry, I eat.
 let hunger = true;
+if (hunger) {
+    console.log('EAT!');
+}
 
 // 3. If it's 10pm, I go to bed. If not, I write code.
-let currentHour = 22;
+let currentHour = 22; 
+if (currenthour > 22 ) {
+    console.log('bed'); 
+} else {
+    console.log('code');
+    }
+
 
 ```
 
@@ -110,14 +121,15 @@ This is where loops come in!
 #### Example
 
 ```js
-let number = 0;
-while (number <= 12) {
-    console.log(number);
-    number = number + 2;
+let number = 0;  // assigning 0 to number 
+while (number <= 12) {  // while is the command for loop
+    console.log(number); // this will keep happening until it equals 12
+    number = number + 2; // 0 + 2, then 2+2 until 12 
 }
 
 // let's break that down.
 ```
+
 
 ---
 
@@ -125,6 +137,14 @@ Let's write a function that outputs 2^10 (two to the power of ten).
 
 ```js
 // Example
+let x = 2 
+let i = 1
+while (1 <= 10) {
+    x = x * 2
+    i ++; // i = i + 1  // i makes sure that the loop isn't infinite 
+}
+console.log(x);
+// 
 
 
 ```
@@ -179,8 +199,9 @@ for (let number = 0; number <=12; number = number + 1) {
 Write a program that output all of the numbers from 0 to 25
 
 ```js
-// code here
-
+for (let i = 0; i <= 25; i++) { // i++ means i + 1 
+    console.log(i);
+}
 ```
 
 ---
@@ -190,7 +211,9 @@ Write a program that output all of the numbers from 0 to 25
 Write a program that output all of ODD the numbers from 0 to 25
 
 ```js
-// code here
+for (let i = 1; i <=25; i+=2) {
+    console.log(i);
+}
 
 ```
 
@@ -201,7 +224,16 @@ Write a program that output all of ODD the numbers from 0 to 25
 Write a program that output all of the numbers from 0 to 25, but replaces all multipes of `5` by the phrase `five alive!`
 
 ```js
-// code here
+// 
+// 
+for (let i=0; i<=25; i++) {
+    if (i % 5 === 0 && i !==0) {
+        console.log('five alive!')  
+    } else {
+        console.log(i)
+    }
+}
+
 
 ```
 

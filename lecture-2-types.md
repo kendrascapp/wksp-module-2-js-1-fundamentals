@@ -4,7 +4,7 @@
 
 There are 6 basic types in JavaScript.
 
-- Strings
+- Strings   
 - Booleans
 - Empty values
 - Numbers
@@ -12,8 +12,12 @@ There are 6 basic types in JavaScript.
 - Objects
 
 ```js
-// Examples
-
+// "bacon" (string)
+// booleans (true false)
+// empty values (null)
+// numbers (123)
+// arrays [1, 2, 3, 4]
+// object (keys and values)  {name: 'fred', age: 23}
 ```
 
 If you are not sure of the type of a given value, you can use `typeof <VALUE>`
@@ -28,6 +32,8 @@ Strings represent text. They are written/defined by wrapping the text in quotes.
 - Single quotes: 'Luminous beings are we…not this crude matter.'
 - Backticks: \`Do. Or do not. There is no try.\`
 
+<!-- use " " when writing normal text in java -->
+
 They are equally good... sort of.
 
 ---
@@ -38,6 +44,7 @@ They are equally good... sort of.
 - Interpolation is a way of inserting JavaScript into your strings.
 - To interpolate a string you use this syntax ${}
 
+<!-- interpolation - means you can inject javascript into anywhere -->
 ---
 
 #### Interpolation Example 
@@ -52,9 +59,11 @@ let introduction = `The area of a circle is π^2.`
 
 // declare a string with interpolation
 let example = `So a ${diameter} pizza has an area of ${pi * radius * radius}.`
+//{diamter} will actually be replaced as 14 (see above)
 
 // Concatenate the strings
 let text = intro + ' ' + example
+// Concatenate means add strings together 
 
 console.log(text);
 // The area of a circle is π^2. So a 14 pizza has an area of 153.86.
@@ -74,7 +83,6 @@ They have just two values, `true` and `false`, which are written as those words.
 ---
 
 ## Empty values
-
 There are two special values, written `null` and `undefined`, that are used to denote the absence of a meaningful value.
 
 They are themselves values, but they carry no information.
@@ -92,17 +100,18 @@ Numbers are exactly what you would expect them to be: numeric values.
 - They can be fractional.
     - `12.75`
     - `2.998e8`
-- Calculations with integers will always be precise, but this is not quite true for fractional numbers.
+- Calculations with integers (whole numbers) will always be precise, but this is not quite true for fractional numbers.
 
 ---
 
 ## Arithmetic
 
-- Basic operators: +, -, *, /
+- Basic operators: +, -, *, /  (adding, subtracting, multiplying, dividing)
 - Order of operations is applied... but when in doubt, add parentheses.
-- %: The remainder operator, often called "modulo". This operator returns the remainder of a division.
-- Comparison Operators
-- Logical operators
+- %: The remainder operator, often called "modulo". This operator returns the remainder of a division. 
+// it will validate if a number is even or odd 
+- Comparison Operators ( >  < )
+- Logical operators ( & )
 
 
 ```js
@@ -125,6 +134,7 @@ Numbers are exactly what you would expect them to be: numeric values.
 | `===` | equal to (strict) | `2 === 2` |
 | `!==` | not equal to (strict) | `2 !== 1` |
 
+*/ use = for assigning, and = = = for actual equal to */
 
 All of the examples in the table above evaluate to _true_. So `2 > 1` (2 is greater than 1) is `true`, and `2 < 1` (2 is less than 1) is `false`.
 
@@ -159,16 +169,18 @@ Of course comparison operators and logical operators are usually combined in an 
 ```js
 // Look at these expressions below and determine whether they evaluate to true or false
 
-1. true || false
-2. false && false
-3. 1 < 2 && 2 > 1
-4. 31 < 13 || 1 < 2 && 3 > 1
-5. 400 <= 400 && 399 < 400 && (30 > 31 || 400 > 31)
-6. true && false && false || false && true
-7. true && false || true || false
-8. true && false && false || false && true ? true && false && false || false && true : 1 < 2 && 2 > 1
+1. true || false // true 
+2. false && false  // true 
+3. 1 < 2 && 2 > 1  // false 
+4. 31 < 13 || 1 < 2 && 3 > 1  // true 
+5. 400 <= 400 && 399 < 400 && (30 > 31 || 400 > 31)  // true
+6. true && false && false || false && true // false 
+7. true && false || true || false // true
+8. true && false && false || false && true ? true && false && false || false && true : 1 < 2 && 2 > 1 // true
 ```
-
+ // let gender = 'male'
+    hello ${gender === 'male' ? 'sir' : 'Miss'}
+    "Hello Sir"
 ---
 
 ## Exceptions, special cases and just plain annoying side-effects
@@ -183,7 +195,10 @@ Of course comparison operators and logical operators are usually combined in an 
     - TODO: add a few more weirdnesses
 
 ```js
-// Examples
+// Examples 
+// 8 * null = 0
+// "5" - 1 = 4
+// "5" + 1 = 51
 
 ```
 
@@ -254,10 +269,10 @@ let anArrayOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```js
 // Example 2 - Given this array
 let anArrayOfNumbers = ['bacon', undefined, 900, true]
-
+// bacon is the value, unedinfed is position 1, 900 is position 2, true is position 3 
 1. How do we access the value 900?
 2. How do we access the value `true`?
-
+array[2] will access 900 
 ```
 
 ---
@@ -277,11 +292,11 @@ let table = [
   [31,32,33,34,35,36]
 ]
 
-1. table[0][0]
-2. table[5][5]
-3. table[2][3]
+1. table[0][0] = 1 
+2. table[5][5] = 36
+3. table[2][3] = 16
 4. How would we access the value 27?
-```
+``` [4][2]
 
 ---
 
@@ -293,22 +308,27 @@ Given this data structure:
 let data = [0, [], [], [1,2,3, [4]]]
 ```
 
-1. How would you access the value `0`?
-2. How would you access the value `3`?
-3. How would you access the value `4`?
+1. How would you access the value `0`? data [0]
+2. How would you access the value `3`? data [3][2]
+3. How would you access the value `4`? data [3][3][0]
 
 ---
 
 ## Objects
 
 Very broadly, an object can be defined as an unordered collection of key/value pairs. 
+'givenName' is key, 'Yoda' is value. 
+The keys don't necessarily need to be written in quotes. It could be. Never put spaces. 
+{my_name: 'kendra'}
 
+{givenName: 'yoda'}
 `{'givenName': 'Yoda', 'surname': undefined, 'age': 900}`
 
 This object has 3 properties.
 
 ```js
-// Example
+// Example   let person = { 'givenName': 'Yoda'}
+//   person.givenName // 'Yoda'
 "it has a property with name 'givenName' and value of 'Yoda' of type string"
 
 ```
@@ -360,8 +380,12 @@ Values in objects can be accessed with
 ```js
 // Example
 let person = {name: 'Bob', age: 23};
-const otherPerson = {name: 'Joe', age: 31, height: '170cm'};
+// person.name // 'Bob'  when u type person.name it will output 'Bob' in the console 
+// person.age // '23'
 
+const otherPerson = {name: 'Joe', age: 31, height: '170cm'};
+// objects may look like they have an order, but there is no inherent order at all
+// otherPerson['name'] // === 'Joe'
 ```
 
 ---
@@ -374,9 +398,9 @@ let person = {name: 'Bob', age: 23};
 let name = 'John';
 
 // What is the value of the following expressions?
-1. person.name
-2. person['name']
-3. person[name]
+1. person.name // 'Bob'
+2. person['name'] // 'Bob'
+3. person[name] // undefined 
 
 ```
 
@@ -391,7 +415,7 @@ let person = {name: 'bob', age: 23};
 let key = 'name';
 
 // What is the value of the following expressions:
-1. person.key
+1. person.key // 
 2. person['key']
 3. person[key]
 

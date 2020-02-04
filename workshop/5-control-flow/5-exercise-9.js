@@ -17,3 +17,31 @@
 // _#_#_#_#
 // #_#_#_#_
 // _#_#_#_#
+obviously I had to look at the solution for this!!! 
+
+for (let i = 0; i < 8; i++) {
+    let line = '';
+    
+    if (i % 2 === 0) {
+        line += '_';
+
+        for (let x = 0; x < 7; x++) {
+            if (x % 2 === 0) {
+                line += '#'
+            } else {
+                line += '_';
+            }
+        }
+    } else {
+        line += '#';
+
+        for (let x = 0; x < 7; x++) {
+            if (x % 2 === 0) {
+                line += '_'
+            } else {
+                line += '#';
+            }
+        }
+    }
+    console.log(line);
+}
