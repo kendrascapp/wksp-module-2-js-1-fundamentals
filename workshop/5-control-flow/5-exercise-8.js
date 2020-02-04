@@ -13,3 +13,11 @@
 // #####
 // ######
 // #######
+
+for (i = 0; i < 7; i++) {
+    let symbol = '#';
+    for (let x = 1; x <= i; x++){
+        symbol += '#';
+    }
+    console.log(symbol);
+} 
